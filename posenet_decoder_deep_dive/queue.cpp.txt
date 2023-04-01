@@ -1,0 +1,51 @@
+'''// For verification
+#include <iostream>
+#include <queue>
+#include <vector>
+
+struct Point {
+  float y;  // all coordinate pairs always use y first.
+  float x;
+};
+
+// Defines a 2-D keypoint with (x, y) float coordinates and its type id.
+struct KeypointWithScore {
+  KeypointWithScore(const Point& _point, const int _id,
+                    const float _score)
+      : point(_point), id(_id), score(_score) {}
+  Point point;
+  int id;
+  float score;
+
+  friend std::ostream& operator<<(std::ostream& ost,
+                                  const KeypointWithScore& keypoint) {
+    return ost << keypoint.point.y << ", " << keypoint.point.x << ", "
+               << keypoint.id << ", " << keypoint.score;
+  }
+};
+
+struct KeypointWithScoreComparator {
+  bool operator()(const KeypointWithScore& lhs,
+                  const KeypointWithScore& rhs) const {
+    return lhs.score < rhs.score;
+  }
+};
+
+using DecreasingScoreKeypointPriorityQueue = std::priority_queue<KeypointWithScore, std::vector<KeypointWithScore>, KeypointWithScoreComparator>;
+
+int main() {
+    // Write C++ code here
+    std::cout << "Hello world!"<<std::endl;
+    DecreasingScoreKeypointPriorityQueue queue;
+    queue.emplace(Point{2.6225490416400135, 15.627451002597809}, 0, 20.000000707805);
+    queue.emplace(Point{6.627451002597809, 15.63235296355560}, 0, 20.000000707805);
+    queue.emplace(Point{22.0, 17.72058826079592}, 15, 20.000000707805);
+    queue.emplace(Point{2.6225490416400135, 13.622549041640013}, 0, 17.411765322089195);
+    queue.emplace(Point{12.622549041640013, 14.769607870373875}, 12, 20.000000707805157);
+    queue.emplace(Point{14.269607852678746, 16.622549041640013}, 9, 19.92156933248043);
+    while (! queue.empty() ) {
+        std::cout << queue.top() << "\n";
+        queue.pop();
+    }
+    return 0;
+}'''

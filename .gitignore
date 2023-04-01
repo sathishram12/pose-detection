@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+__pycache__/
+logs/
+tf_ckpts_patient_monitoring/
+*.pyc
+a.out
