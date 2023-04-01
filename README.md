@@ -1,6 +1,6 @@
 # Pose detection
 
-An Tensorflow implementation of PersonLab for Multi-Person Pose Estimation. Identify every person instance, localize its facial and body keypoints, and estimate its instance segmentation mask.
+A Tensorflow implementation of PersonLab for Multi-Person Pose Estimation. Identify every person instance, localize its facial and body keypoints, and estimate its instance segmentation mask.
 
 Introduction
 Code repo for reproducing 2018 ECCV paper PersonLab: Person Pose Estimation and Instance Segmentation with a Bottom-Up, Part-Based, Geometric Embedding Model
