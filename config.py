@@ -76,11 +76,6 @@ class config:
     # Input shape for training images (By convention s*n+1 for some integer n and s=output_stride)
     IMAGE_SHAPE = (353, 481, 3)
 
-    # Output stride of the base network (resnet101 or resnet152 in the paper)
-    # [Any convolutional stride in the original network which would reduce the 
-    # output stride further is replaced with a corresponding dilation rate.]
-    OUTPUT_STRIDE = 16
-
     # Weights for the losses applied to the keypoint maps ('heatmap'), the binary segmentation map ('seg'),
     # and the short-, mid-, and long-range offsets.
     '''
@@ -137,12 +132,3 @@ class config:
     # log dir
     LOG_DIR = './log'
 
-class TransformationParams:
-
-    target_dist = 0.8
-    scale_prob = 1.
-    scale_min = 0.8
-    scale_max = 2.0
-    max_rotate_degree = 30.
-    center_perterb_max = 20.0
-    flip_prob = 0.5
